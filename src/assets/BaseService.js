@@ -1,6 +1,6 @@
 import axios from "axios";
 const BaseService = axios.create({
-  responseType: "json",
+  // withCredentials: true,
 });
 
 export default BaseService;
