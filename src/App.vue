@@ -16,10 +16,10 @@
              :key="index"
              >
         <img src="http://h0.hucdn.com/open/201843/78fd74d6f6b33cb1_40x40.png" class="img-del" @click="fileDel(index)">
-        <!-- <img class="small-img" :src="item.imgUrl"> -->
-        <img class="small-img" :src="item.file.src">
-        <!-- <div class="img-map-text" @click="doImgMap(item.imgUrl)">点击绘制热点</div> -->
-        <div class="img-map-text" @click="doImgMap(item.file.src)">点击绘制热点</div>
+        <img class="small-img" :src="item.imgUrl">
+        <!-- <img class="small-img" :src="item.file.src"> -->
+        <div class="img-map-text" @click="doImgMap(item.imgUrl)">点击绘制热点</div>
+        <!-- <div class="img-map-text" @click="doImgMap(item.file.src)">点击绘制热点</div> -->
       </div>
     </div>
 
@@ -87,40 +87,40 @@ export default {
     },
     async fileAdd(file) {
       // 上传图片服务
-      // const formDate = new FormData();
-      // formDate.append("file", file);
-      // const response = await this.uploadFilds(formDate);
-      // console.log('response', response);
+      const formDate = new FormData();
+      formDate.append("file", file);
+      const response = await this.uploadFilds(formDate);
+      console.log('response', response);
 
-      // const filename = response.data.filename;
-      // console.log('filename', filename);
-      // const imgUrl = 'http://www.xiaohuangren.top:8080/public/uploads/' + filename;
-      // console.log('imgUrl', imgUrl);
-      // // this.testImg = imgUrl;
-      // this.imgList.push({
-      //   imgUrl,
-      // });
+      const filename = response.data.filename;
+      console.log('filename', filename);
+      const imgUrl = 'http://www.xiaohuangren.top:8080/public/uploads/' + filename;
+      console.log('imgUrl', imgUrl);
+      // this.testImg = imgUrl;
+      this.imgList.push({
+        imgUrl,
+      });
 
       // 本地把图片处理为base64
-      let reader = new FileReader();
-      let image = new Image();
-      let _this=this;
+      // let reader = new FileReader();
+      // let image = new Image();
+      // let _this=this;
 
-      reader.readAsDataURL(file);
-      reader.onload = function () {
-        file.src = this.result;
-        image.onload=function(){
-          let width = image.width;
-          let height = image.height;
-          file.width=width;
-          file.height=height;
-          _this.imgList.push({
-            file
-          });
-          console.log( _this.imgList);
-        };
-        image.src= file.src;
-      }
+      // reader.readAsDataURL(file);
+      // reader.onload = function () {
+      //   file.src = this.result;
+      //   image.onload=function(){
+      //     let width = image.width;
+      //     let height = image.height;
+      //     file.width=width;
+      //     file.height=height;
+      //     _this.imgList.push({
+      //       file
+      //     });
+      //     console.log( _this.imgList);
+      //   };
+      //   image.src= file.src;
+      // }
 
 
     },
