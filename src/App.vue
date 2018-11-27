@@ -132,7 +132,7 @@ export default {
     },
 
     uploadFilds(formDate) {
-      return BaseService.post("http://www.xiaohuangren.top:3003/uploads", formDate);
+      return BaseService.post("https://www.xiaohuangren.top:3003/uploads", formDate);
     },
 
 
