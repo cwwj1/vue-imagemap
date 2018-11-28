@@ -140,7 +140,7 @@ export default {
     background-color: rgba(0, 0, 0, 0.7);
 }
 .image-wrap {
-  width: 672px;
+  width: 472px;
   position: relative;
   left: 50%;
   top: 50%;
