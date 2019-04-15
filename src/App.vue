@@ -7,7 +7,7 @@
 
 
     <div class="upload_warp_left" @click="fileClick">
-      点击上传
+      点击上传a
     </div>
     <input @change="fileChange($event)" type="file" id="upload_file" multiple style="display: none"/>
     <!-- <img :src="testImg"/> -->
